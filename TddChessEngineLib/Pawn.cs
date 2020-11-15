@@ -4,6 +4,11 @@ namespace TddChessEngineLib
 {
     public class Pawn
     {
-        public void Turn(object startPosition, object finishPosition){}
+        public string Position {get; private set;}
+
+        public void TurnTo(string finishPosition)
+        {
+            Position = finishPosition;
+        }
     }
 }
