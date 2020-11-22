@@ -17,7 +17,17 @@ namespace TddChessEngineLib
 
         public void TurnTo(string finishPosition)
         {
-            CurrentPosition = finishPosition;
+            switch(FigureColor)
+            {
+                case FigureColor.White:
+                    if (CurrentPosition[1] < finishPosition[1])
+                    { CurrentPosition = finishPosition; }
+                    break;
+                case FigureColor.Black:
+                    if (CurrentPosition[1] > finishPosition[1])
+                    { CurrentPosition = finishPosition; }
+                    break;
+            }
         }
     }
 }
