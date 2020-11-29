@@ -21,11 +21,25 @@ namespace TddChessEngineLib
             {
                 case FigureColor.White:
                     if (CurrentPosition[1] < finishPosition[1])
-                    { CurrentPosition = finishPosition; }
+                    {
+                        if (CurrentPosition[1]+1 == finishPosition[1])
+                            CurrentPosition = finishPosition;
+                        else
+                        { throw new ArgumentException("PawnCantOverstep"); }
+                    }
+                    else
+                    { throw new ArgumentException("PawnCantGoBack"); }
                     break;
                 case FigureColor.Black:
                     if (CurrentPosition[1] > finishPosition[1])
-                    { CurrentPosition = finishPosition; }
+                    {
+                        if (CurrentPosition[1] == finishPosition[1]+1)
+                            CurrentPosition = finishPosition;
+                        else
+                        { throw new ArgumentException("PawnCantOverstep"); }
+                    }
+                    else
+                    { throw new ArgumentException("PawnCantGoBack"); }
                     break;
             }
         }
