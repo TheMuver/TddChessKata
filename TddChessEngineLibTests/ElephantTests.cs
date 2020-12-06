@@ -17,6 +17,7 @@ namespace TddChessEngineLibTests
             Assert.Equal(e2Position, elephant.CurrentPosition);
         }
 
+        [Fact]
         public void WhenTryCreatingElephantOnE9_ThenItThrowsArgumentException()
         {
             Assert.Throws<ArgumentException>(() => new Elephant(e9Position));
