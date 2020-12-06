@@ -6,41 +6,41 @@ namespace TddChessEngineLibTests
 {
     public class PawnTests
     {
-        const string e2Position = "E2";
-        const string e3Position = "E3";
-        const string e4Position = "E4";
-        const string e5Position = "E5";
+        const string E2Position = "E2";
+        const string E3Position = "E3";
+        const string E4Position = "E4";
+        const string E5Position = "E5";
 
         [Fact]
         public void WhenWhitePawnTurnsFromE2ToE4_ThenItsPositionsChanges()
         {
-            Pawn p = new Pawn(e2Position, FigureColor.White);
-            p.TurnTo(e3Position);
-            Assert.Equal(e3Position, p.CurrentPosition);
+            Pawn p = new Pawn(E2Position, FigureColor.White);
+            p.TurnTo(E3Position);
+            Assert.Equal(E3Position, p.CurrentPosition);
         }
 
         [Fact]
         public void WhenBlackPawnTriesGoBack_ThenItsCantGoBack()
         {
-            Pawn p = new Pawn(e2Position, FigureColor.Black);
+            Pawn p = new Pawn(E2Position, FigureColor.Black);
 
-            Assert.Throws<ArgumentException>(() => p.TurnTo(e3Position));
+            Assert.Throws<ArgumentException>(() => p.TurnTo(E3Position));
         }
 
         [Fact]
         public void WhenWhitePawnTriesGoBack_ThenItsCantGoBack()
         {
-            Pawn p = new Pawn(e3Position, FigureColor.White);
+            Pawn p = new Pawn(E3Position, FigureColor.White);
 
-            Assert.Throws<ArgumentException>(() => p.TurnTo(e2Position));
+            Assert.Throws<ArgumentException>(() => p.TurnTo(E2Position));
         }
 
         [Fact]
         public void WhenWhitePawnTurnsFromE3ToE5_ThenItsCantJump()
         {
-            Pawn p = new Pawn(e3Position, FigureColor.White);
+            Pawn p = new Pawn(E3Position, FigureColor.White);
 
-            Assert.Throws<ArgumentException>(() => p.TurnTo(e5Position));
+            Assert.Throws<ArgumentException>(() => p.TurnTo(E5Position));
         }
     }
 }
