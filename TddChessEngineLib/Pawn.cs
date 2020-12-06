@@ -22,7 +22,7 @@ namespace TddChessEngineLib
                 case FigureColor.White:
                     if (CurrentPosition[1] < finishPosition[1])
                     {
-                        if (CurrentPosition[1]+1 == finishPosition[1])
+                        if (Math.Abs(CurrentPosition[1]-finishPosition[1]) == 1)
                             CurrentPosition = finishPosition;
                         else
                         { throw new ArgumentException("PawnCantOverstep"); }
@@ -33,7 +33,7 @@ namespace TddChessEngineLib
                 case FigureColor.Black:
                     if (CurrentPosition[1] > finishPosition[1])
                     {
-                        if (CurrentPosition[1] == finishPosition[1]+1)
+                        if (Math.Abs(CurrentPosition[1]-finishPosition[1]) == 1)
                             CurrentPosition = finishPosition;
                         else
                         { throw new ArgumentException("PawnCantOverstep"); }
