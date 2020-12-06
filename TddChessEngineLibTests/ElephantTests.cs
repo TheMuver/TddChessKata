@@ -8,6 +8,7 @@ namespace TddChessEngineLibTests
     {
         const string e2Position = "E2";
         const string e9Position = "E9";
+        const string p2Position = "P2";
         
         [Fact]
         public void WhenCreatingElephantOnE2_ThenItCurrentPositionE2()
@@ -21,6 +22,12 @@ namespace TddChessEngineLibTests
         public void WhenTryCreatingElephantOnE9_ThenItThrowsArgumentException()
         {
             Assert.Throws<ArgumentException>(() => new Elephant(e9Position));
+        }
+
+        [Fact]
+        public void WhenTryCreatingElephantOnP2_ThenItThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() => new Elephant(p2Position));
         }
     }
 }
